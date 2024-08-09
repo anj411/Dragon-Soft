@@ -1,0 +1,15 @@
+
+#DragonSoft
+dragonSoft.host=https://api.sandsys.pw
+dragonSoft.host2=https://api.sandsys.pw
+dragonSoft.currency.HKD=CL0001UAT, 74129542, mkporXiDW0dC8tBI2OJFluQcwEgNqP3R, lNTFYuk5IKi1fX0nCAeLVth8ywPczvGj
+dragonSoft.currency.THB=CL0002UAT, 59711610, PCVtZQWByEz2LG4bDkThuAwYlj3NOdM7, HI9bOFQWeazhidEjkMuDrN8oAU0CL6Gp
+dragonSoft.currency.1MMK=CL0003UAT, 73347123, txjyFdlwGzXWPR4aqJpKYQrUBD8Z3LV9, 62IHMwPJyOUoXqpVhfFrQ5Tcu3zRbean
+dragonSoft.currency.1VND=CL0004UAT, 35298070, bMXwhPdn7kL8JQHsuNYCEjU1BiarSID9, 2jeGyaRLJT8QxdSvBHUhC6XPcYVsO3tp
+dragonSoft.currency.SGD=CL0005UAT, 35528251, p9JGavjDrfbcWLZsl3QhqUKF0dPyEm7n, XzP0ULkxVdnp8jlfgiZGrKcwaQMoR9s4
+dragonSoft.currency.JPY=CL0006UAT, 80663378, xnqrhJOvRycbZDwjAKi6P3ag1XmMQu8C, JsAx2ulThUcZBtEPHbeq5YNDo1KVgG8O
+dragonSoft.currency.1IDR=CL0007UAT, 25496440, bI9u4iURcT8nyf1aJOjBozLWkmEhwNts, 2YAT7qExQLyj1Fk9NOagVenftzZPidSs
+dragonSoft.currency.INR=CL0008UAT, 77168955, LoDBHbJapCsxEf7vrR18WjVu6tlGSmON, kAQYaVNtP4G2lnCscMirXepD7FKjI9vR
+dragonSoft.currency.PHP=CL0009UAT, 56122248, FQqXBSa4rR6NbLWhDKfpJj2dw7msekUl, fT7IpDLXHYbNAORWUdG13mave5ZcPzBV
+dragonSoft.currency.MYR=CL00010UAT, 91861918, PFtYZ1hr2UGasvSAQNu6BqHnVzCdKo3X, QTGOMtyd09DqAcUI7ErNsXmPCBRzb8iv
+dragonSoft.open_currency=HKD,THB,1MMK,1VND,SGD,JPY,1IDR,INR,PHP,MYR

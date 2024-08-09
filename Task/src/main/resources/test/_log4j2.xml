@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Properties>
+        <Property name="log_path">logs</Property>
+        <Property name="LOG_PATTERN">{"logger": "%logger", "level": "%level", "msg": "%message", "trace": "%trace"}%n</Property>
+    </Properties>
+
+    <Appenders>
+        <!-- 控制台 -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%d][%t][%p][%c:%L] %m%n"/>
+        </Console>
+        <!-- 文件日志 -->
+        <RollingFile name="DailyRollingFile" fileName="${log_path}/mylog.log" filePattern="${log_path}/mylog.%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="[%d][%t][%p][%c:%L] %m%n"/>
+            <TimeBasedTriggeringPolicy interval="1"/>
+            <SizeBasedTriggeringPolicy size="10 MB"/>
+        </RollingFile>
+        <!-- sql日志 -->
+        <RollingFile name="Sql" fileName="${log_path}/sql.log" filePattern="${log_path}/sql.%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="[%d][%t][%p][%c:%L] %m%n"/>
+            <TimeBasedTriggeringPolicy interval="1"/>
+            <SizeBasedTriggeringPolicy size="10 MB"/>
+        </RollingFile>
+
+        <RollingFile name="awc" fileName="${log_path}/awc.log" filePattern="${log_path}/awc.%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="[%d][%t][%p][%c:%L] %m%n"/>
+            <TimeBasedTriggeringPolicy interval="1"/>
+            <SizeBasedTriggeringPolicy size="100 MB"/>
+        </RollingFile>
+
+        <RollingFile name="luckystreak" fileName="${log_path}/luckystreak.log" filePattern="${log_path}/luckystreak.%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="[%d][%t][%p][%c:%L] %m%n"/>
+            <TimeBasedTriggeringPolicy interval="1"/>
+            <SizeBasedTriggeringPolicy size="100 MB"/>
+        </RollingFile>
+
+
+        <RollingFile name="bg" fileName="${log_path}/bg.log" filePattern="${log_path}/bg.%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="[%d][%t][%p][%c:%L] %m%n"/>
+            <TimeBasedTriggeringPolicy interval="1"/>
+            <SizeBasedTriggeringPolicy size="100 MB"/>
+        </RollingFile>
+
+        <RollingFile name="sa" fileName="${log_path}/sa.log" filePattern="${log_path}/sa.%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="[%d][%t][%p][%c:%L] %m%n"/>
+            <TimeBasedTriggeringPolicy interval="1"/>
+            <SizeBasedTriggeringPolicy size="100 MB"/>
+        </RollingFile>
+
+
+        <RollingFile name="tgp" fileName="${log_path}/tgp.log" filePattern="${log_path}/tgp.%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="[%d][%t][%p][%c:%L] %m%n"/>
+            <TimeBasedTriggeringPolicy interval="1"/>
+            <SizeBasedTriggeringPolicy size="100 MB"/>
+        </RollingFile>
+
+
+        <RollingFile name="fg" fileName="${log_path}/fg.log" filePattern="${log_path}/fg.%d{yyyy-MM-dd}.log">
+        <PatternLayout pattern="[%d][%t][%p][%c:%L] %m%n"/>
+        <TimeBasedTriggeringPolicy interval="1"/>
+        <SizeBasedTriggeringPolicy size="100 MB"/>
+        </RollingFile>
+
+        <RollingFile name="lotto97" fileName="${log_path}/lotto97.log" filePattern="${log_path}/lotto97.%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="[%d][%t][%p][%c:%L] %m%n"/>
+            <TimeBasedTriggeringPolicy interval="1"/>
+            <SizeBasedTriggeringPolicy size="100 MB"/>
+        </RollingFile>
+
+        <RollingFile name="ball" fileName="${log_path}/ball.log" filePattern="${log_path}/ball.%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="[%d][%t][%p][%c:%L] %m%n"/>
+            <TimeBasedTriggeringPolicy interval="1"/>
+            <SizeBasedTriggeringPolicy size="100 MB"/>
+        </RollingFile>
+
+        <RollingFile name="ticket" fileName="${log_path}/ticket.log" filePattern="${log_path}/ticket.%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="[%d][%t][%p][%c:%L] %m%n"/>
+            <TimeBasedTriggeringPolicy interval="1"/>
+            <SizeBasedTriggeringPolicy size="100 MB"/>
+        </RollingFile>
+
+        <RollingFile name="ticketLog" fileName="${log_path}/ticketLog.log" filePattern="${log_path}/ticketLog.%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="[%d][%t][%p][%c:%L] %m%n"/>
+            <TimeBasedTriggeringPolicy interval="1"/>
+            <SizeBasedTriggeringPolicy size="100 MB"/>
+        </RollingFile>
+
+        <RollingFile name="order" fileName="${log_path}/order.log" filePattern="${log_path}/order.%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="[%d][%t][%p][%c:%L] %m%n"/>
+            <TimeBasedTriggeringPolicy interval="1"/>
+            <SizeBasedTriggeringPolicy size="100 MB"/>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <logger name="druid.sql.Statement" level="debug" additivity="false">
+            <appender-ref ref="Console"/>
+            <appender-ref ref="Sql"/>
+            <AppenderRef ref="logstash-tcp"/>
+        </logger>
+        <logger name="druid.sql.ResultSet" level="debug" additivity="false">
+            <appender-ref ref="Console"/>
+            <appender-ref ref="Sql"/>
+            <AppenderRef ref="logstash-tcp"/>
+        </logger>
+
+        <Logger name="mylog" level="trace" additivity="false">
+            <appender-ref ref="Console"/>
+            <appender-ref ref="DailyRollingFile"/>
+            <AppenderRef ref="logstash-tcp"/>
+        </Logger>
+
+        <logger name="sa" level="debug" additivity="false">
+            <appender-ref ref="sa"/>
+            <AppenderRef ref="logstash-tcp"/>
+        </logger>
+
+        <logger name="bg" level="debug" additivity="false">
+            <appender-ref ref="bg"/>
+            <AppenderRef ref="logstash-tcp"/>
+        </logger>
+
+        <logger name="tgp" level="debug" additivity="false">
+            <appender-ref ref="tgp"/>
+            <AppenderRef ref="logstash-tcp"/>
+        </logger>
+
+        <logger name="fg" level="debug" additivity="false">
+            <appender-ref ref="fg"/>
+            <AppenderRef ref="logstash-tcp"/>
+        </logger>
+
+        <logger name="lotto97" level="debug" additivity="false">
+            <appender-ref ref="lotto97"/>
+            <AppenderRef ref="logstash-tcp"/>
+        </logger>
+
+        <logger name="ball" level="debug" additivity="false">
+            <appender-ref ref="ball"/>
+            <AppenderRef ref="logstash-tcp"/>
+        </logger>
+
+        <logger name="ticket" level="debug" additivity="false">
+            <AppenderRef ref="ticket"/>
+            <AppenderRef ref="logstash-tcp"/>
+        </logger>
+
+        <logger name="ticketLog" level="debug" additivity="false">
+            <AppenderRef ref="ticketLog"/>
+            <AppenderRef ref="logstash-tcp"/>
+        </logger>
+
+        <logger name="order" level="debug" additivity="false">
+            <AppenderRef ref="order"/>
+            <AppenderRef ref="logstash-tcp"/>
+        </logger>
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="DailyRollingFile"/>
+            <AppenderRef ref="logstash-tcp"/>
+        </Root>
+    </Loggers>
+</Configuration>
